@@ -49,49 +49,6 @@ public class Dentist {
 	public void setClient(Client dentistClient) { this.dentistClient = dentistClient; }
 	public Client getClient() {	return dentistClient; }
 	
-	// -- METHODS --
-	public String setServiceInfo(int addServiceChoice) {	
-		String service;
-		
-		if (addServiceChoice == 1) { return service = "Filling"; }
-		else if(addServiceChoice == 2) { return service = "Check Up And Cleaning"; }
-		else if(addServiceChoice == 3) { return service = "Tooth Cleaning";  }
-		else { return service = "Tooth Extraction"; }
-	
-	}
-	
-	public boolean isDuplicateService(int addServiceChoice) {
-		
-		for(String dupe: dentistServicesOffered) {
-			if(dupe == setServiceInfo(addServiceChoice)) {
-				return true;
-			}
-		} return false;
-	}
-	
-	public void addService(int addServiceChoice) {
-		
-		if(isDuplicateService(addServiceChoice)) {
-			System.out.println("Cannot Add Service That Already Exist In Your Data");
-			return;
-		}
-		dentistServicesOffered.add(setServiceInfo(addServiceChoice));
-	}
-	
-	public void displayDentistDetails() {
-		int counter = 1;
-		
-		System.out.println("\n Dentist ID: " + dentistId);
-		System.out.println(" Dentist Name: " + dentistName);
-		System.out.println(" Dentist Address: " + dentistAddress);
-		System.out.println(" Dentist Contact Number: " + dentistContactNumber);
-		System.out.println(" Dentist Commision Rate: " + dentistCommissionRate);
-		System.out.println(" Dentist Service Offered: \n" );
-		
-		for(String dentistService: dentistServicesOffered) {
-			System.out.println(" [" + (counter++) + "] " + dentistService);
-		}	
-	}
 }
 
 	

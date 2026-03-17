@@ -76,24 +76,10 @@ public class Client {
 
     // -- ASSOCIATION -- 
     public void addDentist(Dentist dentist){
-
         dentists.add(dentist);
         dentist.setClient(this);
     }
+	
     public List<Dentist> getDentists(){ return dentists; }
-
-    
-	// -- METHODS --
-    public void displayClient(){
-        System.out.println("\n Client ID: " + clientId);
-        System.out.println(" Name: " + clientName);
-        System.out.println(" Address: " + clientAddress);
-        System.out.println(" Contact: " + clientContactNumber);
-        
-        System.out.println(" Dentists Assigned: ");
-
-        for(Dentist clientDentist: dentists){
-            System.out.println(" - " + clientDentist.getDentistName());
-        }
-    }
+ 
 }
